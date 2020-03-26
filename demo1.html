@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function TableCreation(table) {
+			document.write("<TABLE BORDER=ON>");
+			document.write("<TD>PRODUCT</TD><TD>1ST QUARTER</TD><TD>2ND QUARTER</TD><TD>3RD QUARTER</TD><TD>4TH QUARTER</TD>");
+			for(x=1; x<5; x++) 
+			{
+				document.write("<TR>");
+				for(y=0; y<5; y++)
+				{
+					document.write("<TD>",table[x][y],"</TD>");
+				}
+				document.write("</TR>");
+			}
+			document.write("</TABLE>");
+		}
+		arr1 = new Array("SupaWidget","$9,940","$10,100","$9,490","$11,730");
+		arr2 = new Array("WonderWidget","$19,310","$21,140","$20,560","$22,590");
+		arr3 = new Array("MegaWidget","$25,110","$26,260","$25,210","$28,370");
+		arr4 = new Array("HyperWidget","$27,650","$24,550","$30,040","$31,980");
+		arr = new Array("",arr1,arr2,arr3,arr4);
+		TableCreation(arr);
+
+
+		/*Styling The Table*/
+		var x,y;
+		document.getElementsByTagName("table")[0].style.backgroundColor="blue";
+		document.getElementsByTagName("table")[0].style.borderCollapse="Collapse";
+		document.getElementsByTagName("table")[0].style.backgroundColor="#DBE2F2";
+		for(var i =0;i<5;i++)
+		{
+			x=document.getElementsByTagName("TR")[i];
+			for(var j=0;j<5;j++)
+			{
+				y=x.getElementsByTagName("TD")[j];
+				y.style.padding="10px 5px";
+
+				if(j==0)
+				{
+					y.style.borderRight="3px solid #000";
+					y.style.backgroundColor="#AEC2EC";
+					y.style.fontWeight="bold";
+				}
+				if((i%2)==0)
+				{
+					y.style.color="#0C4FEC";
+				}else
+				{
+					y.style.color="#9D3934";
+				}
+				if(i==0)
+				{
+					y.style.color="#fff";
+					y.style.borderBottom="3px solid #000";
+					y.style.backgroundColor="#89A4DC";
+				}
+				if(j==0 && i==0)
+				{
+					y.style.color="#000";
+					y.style.backgroundColor="#719CEE";
+				}
+			}
+		}
+	</script>
+</body>
+</html>
